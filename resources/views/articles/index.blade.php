@@ -9,7 +9,7 @@
 <body>
     <h1>論文一覧</h1>
     @foreach ($articles as $article)
-        <a href=""><p>{{ $article->title }}</p></a>
+        <p><a href="/articles/{{ $article->id }}">{{ $article->title }}</a></p>
     @endforeach
 </body>
 </html>

@@ -10,6 +10,6 @@
     <h1>論文詳細</h1>
     <p>タイトル: {{ $article->title }}</p>
     <p>{{ $article->body }}</p>
-    
+    <input type="submit" value="一覧へ戻る" onclick="history.back()">
 </body>
 </html>
