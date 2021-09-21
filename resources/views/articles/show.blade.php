@@ -13,7 +13,7 @@
     <p>{{ $article->body }}</p>
     
     <div class="button-group">
-        <input type="submit" value="一覧へ戻る" onclick="history.back()">
+        <input type="submit" value="一覧へ戻る" onclick="location.href='/articles'" >
         <a href="/articles/{{ $article->id }}/edit"><input type="submit" value="編集する"></a>
         <form action="/articles/{{ $article->id }}" method="post">
             @csrf
