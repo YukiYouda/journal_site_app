@@ -3,3 +3,7 @@
 label {
     display: block;
 }
+
+.button-group {
+    display: flex;
+}

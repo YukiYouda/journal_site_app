@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Article</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
     <h1>論文詳細</h1>
     <p>タイトル: {{ $article->title }}</p>
     <p>{{ $article->body }}</p>
-    <input type="submit" value="一覧へ戻る" onclick="history.back()">
+    
+    <div class="button-group">
+        <input type="submit" value="一覧へ戻る" onclick="history.back()">
+        <a href="/articles/{{ $article->id }}/edit"><input type="submit" value="編集する"></a>
+        <form action="/articles/{{ $article->id }}" method="post">
+            @csrf
+            @method('DELETE')
+                <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">
+        </form>
+    </div>
 </body>
 </html>
